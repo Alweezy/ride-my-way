@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const router = express.Router();
 const ride = require('../app/models/ride');
@@ -23,7 +25,7 @@ router.get('/', (req, res) => {
 
 // get ride by id
 router.get('/:id', (req, res) => {
-    var id = req.params.id;
+    let id = req.params.id;
     //call the model method getRideById
     ride.getRideById(id,(err, ride)=> {
         if (err) {
@@ -39,7 +41,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    var id = req.params.id;
+    let id = req.params.id;
     ride.deleteRidebyId(id, (err, ride) => {
         if (err) {
             res.json({
@@ -56,7 +58,7 @@ router.delete('/:id', (req, res) => {
 
 // add a ride
 router.post('/', (req, res) => {
-    var newRide = new ride({
+    let newRide = new ride({
         title: req.body.title,
         description: req.body.description
     });

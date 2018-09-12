@@ -1,3 +1,5 @@
+'use strict';
+
 const mongoose = require('mongoose');
 
 
@@ -20,7 +22,7 @@ module.exports.getAllRides = (callback) => {
 };
 
 module.exports.getRideById = (id, callback) => {
-    var query = { _id: id};
+    let query = { _id: id};
     ride.find(query, callback)
 };
 
@@ -30,6 +32,6 @@ module.exports.addRide = (newRide, callback) => {
 };
 
 module.exports.deleteRidebyId = (id, callback) => {
-    var query = { _id: id};
+    let query = { _id: id};
     ride.remove(query, callback)
 };

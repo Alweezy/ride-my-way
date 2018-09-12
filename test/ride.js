@@ -30,7 +30,7 @@ describe('Rides', () => {
     describe('/POST ride', () => {
         it('should add a new ride', (done) => {
             const ride = {
-               title: 'A book by me',
+               title: 'A ride by me',
                description: 'Another one from me'
             };
             chai.request(server)
@@ -46,7 +46,7 @@ describe('Rides', () => {
     describe('/DELETE:id ride', () => {
         it('should delete a particular ride given the id', (done) => {
             const myRide = new ride({
-                title: 'Another book by me too',
+                title: 'Another ride by me too',
                 description: 'This is my second book'
             });
             chai.request(server)
